@@ -20,6 +20,86 @@ return {
 
 Add to `custom/init.lua` the `require(../../kickstart/plugins/<name of plug)` to add TJs other plugins
 
+## Necessities
+
+### Mason
+
+#### Markdown
+
+- prettier
+
+#### Javascript
+
+- prettier
+
+#### Python
+
+- black
+- pyright
+
+#### Rust
+
+- rust_format
+- rust_analyzer
+
+### Harpoon
+
+mark file - <leader>m
+file 1 -
+file 2 -
+file 3 -
+file 4 -
+remove / modify files???
+
+### Telescope
+
+- git_files
+- live_grep
+
+### Treesitter
+
+- format file - <leader>s
+- [d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+- ]d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+- <leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+- <leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+
+### LSP
+K: Displays hover information about the symbol under the cursor in a floating window. See :help vim.lsp.buf.hover().
+gd: Jumps to the definition of the symbol under the cursor. See :help vim.lsp.buf.definition().
+gD: Jumps to the declaration of the symbol under the cursor. Some servers don't implement this feature. See :help vim.lsp.buf.declaration().
+gi: Lists all the implementations for the symbol under the cursor in the quickfix window. See :help vim.lsp.buf.implementation().
+go: Jumps to the definition of the type of the symbol under the cursor. See :help vim.lsp.buf.type_definition().
+gr: Lists all the references to the symbol under the cursor in the quickfix window. See :help vim.lsp.buf.references().
+gs: Displays signature information about the symbol under the cursor in a floating window. See :help vim.lsp.buf.signature_help(). If a mapping already exists for this key this function is not bound.
+<F2>: Renames all references to the symbol under the cursor. See :help vim.lsp.buf.rename().
+<F3>: Format code in current buffer. See :help vim.lsp.buf.format().
+<F4>: Selects a code action available at the current cursor position. See :help vim.lsp.buf.code_action().
+gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float().
+[d: Move to the previous diagnostic in the current buffer. See :help vim.diagnostic.goto_prev().
+]d: Move to the next diagnostic. See :help vim.diagnostic.goto_next().
+
+### Git
+
+- status <leader>gs
+- help - (in fugitive) g?
+- commit - (in fugitive) cc
+- push - (in fugitive) <leader>gp
+- pull - (in fugitive) <leader>gP
+
+### Debug
+
+- debug visual
+- breakpoint
+- start w/ debug
+- run w/out debug
+
+## Other
+
+### Telescope
+
+:Telescope keymaps
+
 ## Todo
 
 Refactoring rename variable
@@ -27,9 +107,17 @@ theprimagen refactoring - but doesn't support rust
 
 ## Tricks
 
-:Telescope keymaps to check keymaps
+:help K - example of using help
 :Mason to install LSP / formatters / etc...
 
 ## Issues
 
 Need to map <leader>a to something else? or leave to m
+- paste image markdown
+
+## Git
+
+<leader>gs = git status
+:G <git command> does git stuff
+:G diffsplit = great diff editor
+

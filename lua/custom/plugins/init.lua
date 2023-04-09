@@ -3,9 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  'mbbill/undotree',
-  require '../../../kickstart.plugins.autoformat',
-  require '../../../kickstart.plugins.debug',
+	require '../../../kickstart.plugins.autoformat',
+	require '../../../kickstart.plugins.debug',
 }
 --[[
 	use({
@@ -20,7 +19,6 @@ return {
 		end
 	})
 
-	use("theprimeagen/refactoring.nvim")
 	use("nvim-treesitter/nvim-treesitter-context");
 
 	use {
