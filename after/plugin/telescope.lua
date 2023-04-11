@@ -5,4 +5,6 @@ vim.keymap.set('n', '<C-S-p>', builtin.commands, {})
 vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>ph', builtin.help_tags, { desc = "Fuzzy find help" })
+vim.keymap.set('n', '<leader>pk', builtin.keymaps, { desc = "Fuzzy find key maps" })
+
