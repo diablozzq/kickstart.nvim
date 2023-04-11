@@ -4,7 +4,7 @@
 -- See the kickstart.nvim README for more information
 return {
 	require '../../../kickstart.plugins.autoformat',
-	require '../../../kickstart.plugins.debug',
+	--require '../../../kickstart.plugins.debug',
 }
 --[[
 	use({
