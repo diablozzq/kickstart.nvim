@@ -44,12 +44,10 @@ Add to `custom/init.lua` the `require(../../kickstart/plugins/<name of plug)` to
 
 ### Harpoon
 
+edit harpoon file - normal vim keys
 mark file - <leader>m
-file 1 -
-file 2 -
-file 3 -
-file 4 -
-remove / modify files???
+file 1-4 - <leader>1-4
+harpoon file - <leader>tab
 
 ### Telescope
 

@@ -20,20 +20,4 @@ return {
 	})
 
 	use("nvim-treesitter/nvim-treesitter-context");
-
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-
-			-- Autocompletion
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
-			{ 'hrsh7th/cmp-nvim-lua' },
-
-			{ 'rafamadriz/friendly-snippets' },
-		}
-	}
-
-	use("folke/zen-mode.nvim")
-	use("github/copilot.vim")
-	use("laytan/cloak.nvim")
 --]]
