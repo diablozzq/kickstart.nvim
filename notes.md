@@ -119,3 +119,20 @@ Need to map <leader>a to something else? or leave to m
 :G <git command> does git stuff
 :G diffsplit = great diff editor
 
+### Alacritty
+
+- consistent config
+- fast
+
+### ZSH
+
+- awesome shell autocomplete
+
+### Tmux
+
+- save sessions
+- run commands from nvim
+
+### I3
+
+- only need workspaces
