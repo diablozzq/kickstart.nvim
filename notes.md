@@ -105,6 +105,8 @@ theprimagen refactoring - but doesn't support rust
 
 ## Tricks
 
+:so - sources config
+:diffs <filename> - diffs another file with the current file
 :help K - example of using help
 :Mason to install LSP / formatters / etc...
 
@@ -139,3 +141,9 @@ Need to map <leader>a to something else? or leave to m
 ### I3
 
 - only need workspaces
+
+### Troubleshooting
+
+- Check terminal, tmux, nvim in that order
+- Print events from alacritty to check keyboard received events
+`./Alacritty.app/Contents/MacOS/alacritty --print-events`
