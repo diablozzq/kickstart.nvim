@@ -43,13 +43,13 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- vim.g.netrw_banner = 0
 -- vim.g.netrw_winsize = 25
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'vim.cmd.Ex' })
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = ":m '>+1<CR>gv=gv" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = ":m '<-2<CR>gv=gv" })
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "mzJ`z" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "<C-d>zz" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")

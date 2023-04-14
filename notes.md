@@ -132,6 +132,9 @@ Need to map <leader>a to something else? or leave to m
 
 - save sessions
 - run commands from nvim
+- `<prefix> : show-options -g` - shows current config global
+- `<prefix> : show-options -s` - shows current config server?
+- `<prefix> : source-file ~/.tmux.conf` - reload current config
 
 ### I3
 
