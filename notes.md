@@ -147,3 +147,7 @@ Need to map <leader>a to something else? or leave to m
 - Check terminal, tmux, nvim in that order
 - Print events from alacritty to check keyboard received events
 `./Alacritty.app/Contents/MacOS/alacritty --print-events`
+- open karabiner events
+- check logs when changing karabiner config
+- check frontmost application
+- check "unless" style configs in karabiner
