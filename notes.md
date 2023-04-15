@@ -20,6 +20,15 @@ return {
 
 Add to `custom/init.lua` the `require(../../kickstart/plugins/<name of plug)` to add TJs other plugins
 
+## Vs intellij
+
+- color is better
+- shortcuts MUCH better in nvim
+- speed
+- cost
+- intellij has *sometimes* better lsp
+- rust_analyzer is better, but requires functions
+
 ## Necessities
 
 ### Mason
@@ -82,6 +91,7 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 - status <leader>gs
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
+- diff - (in fugitive) dd
 - push - (in fugitive) <leader>gp
 - pull - (in fugitive) <leader>gP
 
