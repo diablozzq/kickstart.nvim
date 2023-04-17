@@ -20,6 +20,18 @@ return {
 
 Add to `custom/init.lua` the `require(../../kickstart/plugins/<name of plug)` to add TJs other plugins
 
+## Ansible
+
+> Need to make this into a container
+
+```bash
+sudo apt -y install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt install ansible
+<copy setup.yml to a file>
+ansible-playbook setup.yml -K
+```
+
 ## Vs intellij
 
 - color is better
@@ -139,6 +151,7 @@ Need to map <leader>a to something else? or leave to m
 ### ZSH
 
 - awesome shell autocomplete
+- Look into ssh teleportation
 
 ### Tmux
 
