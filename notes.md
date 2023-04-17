@@ -1,5 +1,9 @@
 # Vim notes
 
+## Link to wsl
+
+`ln -s /mnt/c/Users/<username>/Documents/architecture ~/architecture`
+
 ## Init
 
 > Goal keep close to stock theprimagen / kickstart w/out too many customizations
@@ -147,3 +151,11 @@ Need to map <leader>a to something else? or leave to m
 - Check terminal, tmux, nvim in that order
 - Print events from alacritty to check keyboard received events
 `./Alacritty.app/Contents/MacOS/alacritty --print-events`
+
+## Firenvim
+
+https://github.com/glacambre/firenvim/blob/master/TROUBLESHOOTING.md
+
+* Install the firenvim extension and the lazy config
+* Try http://txti.es/
+
