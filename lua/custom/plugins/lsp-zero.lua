@@ -16,6 +16,7 @@ return {
 		-- Autocompletion
 		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-path' },
+		{ 'hrsh7th/cmp-nvim-lsp-signature-help' },
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 		{ 'L3MON4D3/LuaSnip' }, -- Required
 		{ 'rafamadriz/friendly-snippets' },

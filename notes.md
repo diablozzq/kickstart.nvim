@@ -24,6 +24,27 @@ return {
 
 Add to `custom/init.lua` the `require(../../kickstart/plugins/<name of plug)` to add TJs other plugins
 
+## Ansible
+
+> Need to make this into a container
+
+```bash
+sudo apt -y install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt install ansible
+<copy setup.yml to a file>
+ansible-playbook setup.yml -K
+```
+
+## Vs intellij
+
+- color is better
+- shortcuts MUCH better in nvim
+- speed
+- cost
+- intellij has *sometimes* better lsp
+- rust_analyzer is better, but requires functions
+
 ## Necessities
 
 ### Mason
@@ -86,6 +107,7 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 - status <leader>gs
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
+- diff - (in fugitive) dd
 - push - (in fugitive) <leader>gp
 - pull - (in fugitive) <leader>gP
 
@@ -109,6 +131,7 @@ theprimagen refactoring - but doesn't support rust
 
 ## Tricks
 
+:lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
 :so - sources config
 :diffs <filename> - diffs another file with the current file
 :help K - example of using help
@@ -133,6 +156,7 @@ Need to map <leader>a to something else? or leave to m
 ### ZSH
 
 - awesome shell autocomplete
+- Look into ssh teleportation
 
 ### Tmux
 
@@ -151,6 +175,7 @@ Need to map <leader>a to something else? or leave to m
 - Check terminal, tmux, nvim in that order
 - Print events from alacritty to check keyboard received events
 `./Alacritty.app/Contents/MacOS/alacritty --print-events`
+<<<<<<< HEAD
 
 ## Firenvim
 
@@ -159,3 +184,9 @@ https://github.com/glacambre/firenvim/blob/master/TROUBLESHOOTING.md
 * Install the firenvim extension and the lazy config
 * Try http://txti.es/
 
+=======
+- open karabiner events
+- check logs when changing karabiner config
+- check frontmost application
+- check "unless" style configs in karabiner
+>>>>>>> 21080f5ac9692c05e8a2517f6bd13691a26c949f

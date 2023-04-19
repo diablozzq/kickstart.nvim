@@ -1,0 +1,75 @@
+---
+- name: Setup dev environment
+  connection: local
+  vars:
+    git_pass: "pass"
+    win_user: "kasey"
+  hosts: localhost
+  tasks:
+    # Need to do SSH key in ansible vault
+    #- name: Create config directory
+    #  ansible.builtin.file:
+    #    path: ~/.config
+    #    state: directory
+    #    mode: '0755'
+    #- name: Read-write git checkout from github
+    #  ansible.builtin.git:
+    #    repo: git@github.com:diablozzq/kickstart.nvim.git
+    #    dest: ~/.config/nvim
+  - name: Create downloads directory
+    ansible.builtin.file:
+      path: ~/Downloads
+      state: directory
+      mode: '0755'
+  - name: Download neovim
+    ansible.builtin.get_url:
+      url: https://github.com/neovim/neovim/releases/download/v0.9.0/nvim-linux64.tar.gz
+      dest: ~/Downloads/nvim-linux64.tar.gz
+  - name: Create .nvim directory
+    ansible.builtin.file:
+      path: ~/.nvim
+      state: directory
+      mode: '0755'
+  - name: Install nvim
+    ansible.builtin.unarchive:
+      src: ~/Downloads/nvim-linux64.tar.gz
+      dest: ~/.nvim/
+  - name: Install tmux
+    ansible.builtin.apt:
+      pkg:
+        - tmux
+        - make
+        - gcc
+        - ripgrep
+        - zsh
+    become: true
+  - name: Link tmux config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.tmux.conf
+      dest: ~/.tmux.conf
+      state: link
+  - name: Link zsh config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.zshrc
+      dest: ~/.zshrc
+      state: link
+  - name: Change user shell to zsh
+    become: yes
+    user:
+      name: "{{ ansible_env.USER }}"
+      shell: /bin/zsh
+  - name: Create alacritty directory
+    ansible.builtin.file:
+      path: /mnt/c/Users/morla/AppData/Roaming/alacritty
+      state: directory
+      mode: '0755'
+  - name: Download alacritty
+    ansible.builtin.get_url:
+      url: https://github.com/alacritty/alacritty/releases/download/v0.12.0/Alacritty-v0.12.0-portable.exe
+      dest: "/mnt/c/Users/{{ win_user }}/AppData/Roaming/alacritty/alacritty.exe"
+  - name: Copy alacritty config
+    ansible.builtin.copy:
+      src: ~/.config/nvim/.alacritty-windows.yml
+      dest: "/mnt/c/Users/{{ win_user }}/AppData/Roaming/alacritty/alacritty.yml"
+#git config --global user.name "Kasey Morland"
+#git config --global user.email "morlandkc@gmail.com"
