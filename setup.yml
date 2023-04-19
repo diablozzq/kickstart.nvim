@@ -42,6 +42,8 @@
         - gcc
         - ripgrep
         - zsh
+        - npm
+        - python3.10-venv
     become: true
   - name: Link tmux config
     ansible.builtin.file:

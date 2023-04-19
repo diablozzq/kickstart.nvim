@@ -61,6 +61,8 @@ ansible-playbook setup.yml -K
 
 - black
 - pyright
+- ruff
+- debugpy
 
 #### Rust
 
