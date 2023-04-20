@@ -142,6 +142,7 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 ## Paste Img
 
 > Note: something about os.execute or io.pipe seems to be screwing with neovim refresh
+> Note: tmux seems to fix the screwing with neovim...
 
 
 Paste image fix
@@ -206,6 +207,7 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 
 ## Tricks
 
+`!` - shows keybinds
 `!ls -alth` - bang can be used to run commands
 `powershell.exe "(Get-Clipboard -Format Image).save('test.png')"` - pastes and image into WSL / windows
 :PasteImg = paste image to nvim
