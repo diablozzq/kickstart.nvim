@@ -133,6 +133,7 @@ theprimagen refactoring - but doesn't support rust
 
 ## Tricks
 
+:PasteImg = paste image to nvim
 :lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
 :so - sources config
 :diffs <filename> - diffs another file with the current file
