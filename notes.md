@@ -144,6 +144,54 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 Paste image fix
 https://github.com/ekickx/clipboard-image.nvim/pull/48/files
 
+```
+M lua/clipboard-image/health.lua
+@@ -1,6 +1,5 @@
+ local M = {}
+ local utils = require "clipboard-image.utils"
+-local health = require "health"
+
+ local packages = {
+   x11 = { name = "xclip", binary = "xclip" },
+@@ -48,11 +47,11 @@ end
+ M.check = function()
+   local is_dep_exist, report_msg = M.check_current_dep()
+
+-  health.report_start "Checking dependencies"
++  vim.health.report_start "Checking dependencies"
+   if is_dep_exist then
+-    health.report_ok(report_msg)
++    vim.health.report_ok(report_msg)
+   else
+-    health.report_error(report_msg)
++    vim.health.report_error(report_msg)
+   end
+ end
+```
+
+```
+-    cmd_check = "Get-Clipboard -Format Image"
+-    cmd_paste = "$content = " .. cmd_check .. ";$content.Save('%s', 'png')"
+-    cmd_check = 'powershell.exe "' .. cmd_check .. '"'
+-    cmd_paste = 'powershell.exe "' .. cmd_paste .. '"'
++    cmd_check = 'powershell.exe "(Get-Clipboard -Format Image)"'
++    cmd_paste = 'powershell.exe "(Get-Clipboard -Format Image).save(' .. "'%s'" .. ')"'
+```
+
+```
+-  os.execute(string.format(cmd_paste, path))
++  --print('Saving image')
++  --os.execute()
++  local command = string.format(cmd_paste, path)
++  -- print(command)
++  io.stdout:setvbuf 'no'
++  local file = assert(io.popen(command, 'r'))
++  file:flush() -- > important to prevent receiving partial output
++  local output = file:read('*all')
++  --print(output)
++  file:close()
+```
+
 ## Todo
 
 Refactoring rename variable
