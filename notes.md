@@ -69,6 +69,15 @@ ansible-playbook setup.yml -K
 - rust_format
 - rust_analyzer
 
+### Windows
+
+ctrl+w = windows
+
+### Terminal
+
+ctrl \, ctrl n = escape to regular mode
+i = insert mode
+
 ### Harpoon
 
 edit harpoon file - normal vim keys
@@ -80,6 +89,9 @@ harpoon file - <leader>tab
 
 - git_files
 - live_grep
+- sf = search files
+- <space><space> = search buffers
+- sr = search recent
 
 ### Treesitter
 
@@ -110,6 +122,7 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
 - diff - (in fugitive) dd
+- diff `=` on file in fugitive
 - push - (in fugitive) <leader>gp
 - pull - (in fugitive) <leader>gP
 
@@ -126,13 +139,23 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 
 :Telescope keymaps
 
+## Paste Img
+
+Paste image fix
+https://github.com/ekickx/clipboard-image.nvim/pull/48/files
+
 ## Todo
 
 Refactoring rename variable
 theprimagen refactoring - but doesn't support rust
 
+## Plugins
+
+Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
+
 ## Tricks
 
+`powershell.exe "(Get-Clipboard -Format Image).save('test.png')"` - pastes and image into WSL / windows
 :PasteImg = paste image to nvim
 :lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
 :so - sources config
