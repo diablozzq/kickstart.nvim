@@ -155,6 +155,7 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 
 ## Tricks
 
+`!ls -alth` - bang can be used to run commands
 `powershell.exe "(Get-Clipboard -Format Image).save('test.png')"` - pastes and image into WSL / windows
 :PasteImg = paste image to nvim
 :lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
