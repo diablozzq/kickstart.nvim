@@ -141,6 +141,9 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 
 ## Paste Img
 
+> Note: something about os.execute or io.pipe seems to be screwing with neovim refresh
+
+
 Paste image fix
 https://github.com/ekickx/clipboard-image.nvim/pull/48/files
 
