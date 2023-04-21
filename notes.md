@@ -207,15 +207,16 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 
 ## Tricks
 
-`!` - shows keybinds
-`!ls -alth` - bang can be used to run commands
-`powershell.exe "(Get-Clipboard -Format Image).save('test.png')"` - pastes and image into WSL / windows
-:PasteImg = paste image to nvim
-:lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
-:so - sources config
-:diffs <filename> - diffs another file with the current file
-:help K - example of using help
-:Mason to install LSP / formatters / etc...
+* You can change .alacritty.yml and it will update live w/out restart
+* `!` - shows keybinds
+* `!ls -alth` - bang can be used to run commands
+* `powershell.exe "(Get-Clipboard -Format Image).save('test.png')"` - pastes and image into WSL / windows
+* :PasteImg = paste image to nvim
+* :lua print(vim.inspect(vim.fn.readfile("/proc/version"))) - runs a lua from command line
+* :so - sources config
+* :diffs <filename> - diffs another file with the current file
+* :help K - example of using help
+* :Mason to install LSP / formatters / etc...
 
 ## Issues
 
@@ -240,8 +241,18 @@ Need to map <leader>a to something else? or leave to m
 
 ### Tmux
 
-- save sessions
-- run commands from nvim
+- ctrl+b = prefix
+- `tmux ls` shows existing sessions
+- `tmux new -s dioxus` - creates a new session
+- `tmux attach -t dioxus` - attaches to a session
+
+#### Prefix shortcuts
+
+- `d` - detaches from a session
+- `number` - move to window
+- `n` - next window
+- `x` - kill window
+- `c` - create window
 - `<prefix> : show-options -g` - shows current config global
 - `<prefix> : show-options -s` - shows current config server?
 - `<prefix> : source-file ~/.tmux.conf` - reload current config

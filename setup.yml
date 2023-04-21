@@ -75,3 +75,4 @@
       dest: "/mnt/c/Users/{{ win_user }}/AppData/Roaming/alacritty/alacritty.yml"
 #git config --global user.name "Kasey Morland"
 #git config --global user.email "morlandkc@gmail.com"
+#git config --global pull.rebase false
