@@ -23,6 +23,11 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
+window:
+   dimensions:
+     columns: 133
+     lines: 40
+
 #window:
   # Window dimensions (changes require restart)
   #

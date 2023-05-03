@@ -174,12 +174,8 @@ M lua/clipboard-image/health.lua
 ```
 
 ```
--    cmd_check = "Get-Clipboard -Format Image"
--    cmd_paste = "$content = " .. cmd_check .. ";$content.Save('%s', 'png')"
--    cmd_check = 'powershell.exe "' .. cmd_check .. '"'
--    cmd_paste = 'powershell.exe "' .. cmd_paste .. '"'
-+    cmd_check = 'powershell.exe "(Get-Clipboard -Format Image)"'
-+    cmd_paste = 'powershell.exe "(Get-Clipboard -Format Image).save(' .. "'%s'" .. ')"'
+    cmd_check = 'powershell.exe -nologo -noprofile -noninteractive "(Get-Clipboard -Format Image)"'
+    cmd_paste = 'powershell.exe -nologo -noprofile -noninteractive "(Get-Clipboard -Format Image).save(' ..
 ```
 
 ```
