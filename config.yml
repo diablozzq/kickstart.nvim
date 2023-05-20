@@ -1,0 +1,25 @@
+# ansible-playbook config.yml
+---
+- name: Refresh config files
+  connection: local
+  hosts: localhost
+  tasks:
+  - name: Link tmux config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.tmux.conf
+      dest: ~/.tmux.conf
+      state: link
+  - name: Link zsh config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.zshrc
+      dest: ~/.zshrc
+      state: link
+  - name: Link alacritty config
+    ansible.builtin.file:
+      src: ~/.config/nvim/alacritty.yml
+      dest: ~/.alacritty.yml
+      state: link
+  - name: Copy alacritty config
+    ansible.builtin.copy:
+      src: ~/.config/nvim/alacritty-windows.yml
+      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
