@@ -39,5 +39,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias vim=nvim
 export PATH=~/.nvim/bin:$PATH
 
-cd ~/architecture
+cd ~/
 ~/.config/nvim/tmux.sh
