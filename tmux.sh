@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-SESSIONNAME="architecture"
+SESSIONNAME="tmux"
 
 tmux has-session -t $SESSIONNAME &> /dev/null
 

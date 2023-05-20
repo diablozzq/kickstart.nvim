@@ -1,9 +1,9 @@
+# ansible-playbook setup.yml
 ---
 - name: Setup dev environment
   connection: local
   vars:
     git_pass: "pass"
-    win_user: "kasey"
   hosts: localhost
   tasks:
     # Need to do SSH key in ansible vault
@@ -30,6 +30,10 @@
       path: ~/.nvim
       state: directory
       mode: '0755'
+  # Reset nvim config
+  #rm -rf ~/.local/share/nvim
+  #rm -rf ~/.local/state/nvim
+  #rm -rf ~/.cache/nvim
   - name: Install nvim
     ansible.builtin.unarchive:
       src: ~/Downloads/nvim-linux64.tar.gz
@@ -45,16 +49,6 @@
         - npm
         - python3.10-venv
     become: true
-  - name: Link tmux config
-    ansible.builtin.file:
-      src: ~/.config/nvim/.tmux.conf
-      dest: ~/.tmux.conf
-      state: link
-  - name: Link zsh config
-    ansible.builtin.file:
-      src: ~/.config/nvim/.zshrc
-      dest: ~/.zshrc
-      state: link
   - name: Change user shell to zsh
     become: yes
     user:
@@ -68,11 +62,8 @@
   - name: Download alacritty
     ansible.builtin.get_url:
       url: https://github.com/alacritty/alacritty/releases/download/v0.12.0/Alacritty-v0.12.0-portable.exe
-      dest: "/mnt/c/Users/{{ win_user }}/AppData/Roaming/alacritty/alacritty.exe"
-  - name: Copy alacritty config
-    ansible.builtin.copy:
-      src: ~/.config/nvim/.alacritty-windows.yml
-      dest: "/mnt/c/Users/{{ win_user }}/AppData/Roaming/alacritty/alacritty.yml"
+      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.exe"
+  - include: config.yml
 #git config --global user.name "Kasey Morland"
 #git config --global user.email "morlandkc@gmail.com"
 #git config --global pull.rebase false
