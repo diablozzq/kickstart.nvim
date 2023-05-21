@@ -122,7 +122,10 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
 - diff - (in fugitive) dd
-- diff `=` on file in fugitive
+- undo staged - u
+- stage - s
+- revert change - X
+- diff - (in fugitive) =
 - push - (in fugitive) <leader>gp
 - pull - (in fugitive) <leader>gP
 
