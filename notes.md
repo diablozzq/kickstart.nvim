@@ -121,11 +121,11 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 - status <leader>gs
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
-- diff - (in fugitive) dd
 - undo staged - u
 - stage - s
 - revert change - X
-- diff - (in fugitive) =
+- diff both in line - (in fugitive) dd
+- diff single line - (in fugitive) =
 - push - (in fugitive) <leader>gp
 - pull - (in fugitive) <leader>gP
 
@@ -221,6 +221,14 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 
 Need to map <leader>a to something else? or leave to m
 - paste image markdown
+  - working - need latest version
+  - have patches
+- mouse highlight in windows
+- mouse mode?
+- visual mode copy paste w/out line numbers in windows
+- paste keyboard shortcut
+  - probably need to separate system from vim paste
+- image support in alacritty - test
 
 ## Git
 

@@ -1,4 +1,8 @@
 # ansible-playbook setup.yml
+# mac
+# Install homebrew
+# Install alacritty
+# brew install ansible
 ---
 - name: Setup dev environment
   connection: local

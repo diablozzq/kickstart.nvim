@@ -4,6 +4,10 @@
   connection: local
   hosts: localhost
   tasks:
+  - name: Check windows path
+    stat:
+      path: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
+    register: register_name
   - name: Link tmux config
     ansible.builtin.file:
       src: ~/.config/nvim/.tmux.conf
@@ -23,3 +27,4 @@
     ansible.builtin.copy:
       src: ~/.config/nvim/alacritty-windows.yml
       dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
+    when: register_name.stat.exists
