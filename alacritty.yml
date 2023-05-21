@@ -1,3 +1,14 @@
+key_bindings:
+  - { key: V, mods: Control, action: Paste }
+
+font:
+  size: 16.0
+
+window:
+   dimensions:
+     columns: 133
+     lines: 40
+
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
@@ -23,10 +34,10 @@
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
 
-window:
-   dimensions:
-     columns: 133
-     lines: 40
+#window:
+#   dimensions:
+#     columns: 133
+#     lines: 40
 
 #window:
 # Window dimensions (changes require restart)
@@ -127,7 +138,7 @@ window:
 #multiplier: 3
 
 # Font configuration
-font:
+#font:
   # Normal (roman) font face
   #normal:
   # Font family
@@ -175,7 +186,7 @@ font:
   #style: Bold Italic
 
   # Point size
-  size: 16.0
+  #size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -454,8 +465,8 @@ font:
 # Default:
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-shell:
-  program: wsl.exe
+#shell:
+#  program: wsl.exe
   #args:
   #  - --login
 # Startup directory
@@ -770,8 +781,8 @@ shell:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-key_bindings:
-  - { key: V, mods: Control, action: Paste }
+#key_bindings:
+#  - { key: V, mods: Control, action: Paste }
 #- { key: Paste,                                       action: Paste          }
 #- { key: Copy,                                        action: Copy           }
 #- { key: L,         mods: Control,                    action: ClearLogNotice }
