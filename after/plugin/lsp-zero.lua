@@ -15,9 +15,10 @@ vim.diagnostic.config({
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
-    local opts = { buffer = bufnr, remap = false }
-    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end,
+        { buffer = bufnr, remap = false, desc = 'Visual buffer workspace symbol' })
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end,
+        { buffer = bufnr, remap = false, desc = 'Visual buffer references' })
 end)
 
 -- (Optional) Configure lua language server for neovim
