@@ -52,6 +52,7 @@
         - zsh
         - npm
         - python3.10-venv
+        - python3-pip
     become: true
   - name: Change user shell to zsh
     become: yes

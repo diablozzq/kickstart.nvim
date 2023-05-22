@@ -217,6 +217,18 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 * :help K - example of using help
 * :Mason to install LSP / formatters / etc...
 
+## Changing username
+
+```
+ubuntu config --default-user root
+wsl
+sudo usermod -l newUsername oldUsername
+sudo groupmod -n newUsername oldUsername
+sudo usermod -d /home/newHomeDir -m newUsername
+exit
+ubuntu config --default-user newUsername
+```
+
 ## Issues
 
 Need to map <leader>a to something else? or leave to m

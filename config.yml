@@ -23,7 +23,7 @@
       src: ~/.config/nvim/alacritty.yml
       dest: ~/.alacritty.yml
       state: link
-  - name: Copy alacritty config
+  - name: Copy Windows alacritty config
     ansible.builtin.copy:
       src: ~/.config/nvim/alacritty-windows.yml
       dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
