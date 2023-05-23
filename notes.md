@@ -8,7 +8,7 @@
 
 * ConPTY on Win 10 doesn't support mouse - https://github.com/microsoft/terminal/issues/376
 * How should we paste between system and not?
-* tmux nested message
+  * how should we paste into tmux?
 * Git pull
 * Git conflicts
 * clipboard paste image
@@ -251,6 +251,19 @@ Need to map <leader>a to something else? or leave to m
   - probably need to separate system from vim paste
 - image support in alacritty - test
 
+## Paste
+
+> Should work in neovim (takes over mouse) and tmux (alacritty handles mouse)
+
+- Mouse
+  - mouse drag highlights
+  - right click pastes from system w/ no visual selection
+  - right click copies to system w/ visual selection
+
+- Keyboard
+  - Ctrl + shift + v = paste from system from alacritty
+  - v + y = visual + yank
+
 ## Git
 
 <leader>gs = git status
@@ -259,6 +272,8 @@ Need to map <leader>a to something else? or leave to m
 
 ### Alacritty
 
+- hold shift = bypass mouse grab
+  - hold shift + url = open url
 - consistent config
 - fast
 
@@ -269,10 +284,17 @@ Need to map <leader>a to something else? or leave to m
 
 ### Tmux
 
+- prefix+: = command
 - ctrl+b = prefix
 - `tmux ls` shows existing sessions
 - `tmux new -s dioxus` - creates a new session
 - `tmux attach -t dioxus` - attaches to a session
+- prefix + 1..0 = switch to window
+- prefix + x = kill pane
+- prefix + [ = search mode (w/ vim keys w/ config)
+  - y = yank + cancel
+  - q = quit
+  - paste works into vim w/ regular p
 
 #### Prefix shortcuts
 
@@ -309,3 +331,11 @@ https://github.com/glacambre/firenvim/blob/master/TROUBLESHOOTING.md
 - check frontmost application
 - check "unless" style configs in karabiner
 >>>>>>> 21080f5ac9692c05e8a2517f6bd13691a26c949f
+
+## Neovim keys
+
+- Ctrl + v = block visual
+  - Shift + i = multi insert
+- >< in visual = indent
+- zz = center line
+
