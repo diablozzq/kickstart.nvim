@@ -4,6 +4,15 @@
 
 `ln -s /mnt/c/Users/<username>/Documents/architecture ~/architecture`
 
+## Issus
+
+* ConPTY on Win 10 doesn't support mouse - https://github.com/microsoft/terminal/issues/376
+* How should we paste between system and not?
+* tmux nested message
+* Git pull
+* Git conflicts
+* clipboard paste image
+
 ## Init
 
 > Goal keep close to stock theprimagen / kickstart w/out too many customizations

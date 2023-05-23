@@ -10,4 +10,7 @@ then
     tmux send-keys -t $SESSIONNAME "nvim" C-m
 fi
 
-tmux attach -t $SESSIONNAME
+if [ -z ${TMUX+x} ]
+then
+    tmux attach -t $SESSIONNAME
+fi
