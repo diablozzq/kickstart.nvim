@@ -36,14 +36,12 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end,
     },
-    mapping = cmp.mapping.preset.insert {
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        --['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        --['<C-b>'] = cmp_action.luasnip_jump_backward(),
-        --['<Tab>'] = nil,
-        --['<S-Tab>'] = nil,
-    },
+    --mapping = cmp.mapping.preset.insert {
+    --['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    --['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    --['<Tab>'] = nil,
+    --['<S-Tab>'] = nil,
+    --},
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
