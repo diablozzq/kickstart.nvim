@@ -3,6 +3,7 @@
 ## Link to wsl
 
 `ln -s /mnt/c/Users/<username>/Documents/architecture ~/architecture`
+`ln -s /mnt/c/Users/<username>/Documents/innovation ~/innovation`
 
 ## Issus
 
@@ -99,8 +100,8 @@ harpoon file - <leader>tab
 - git_files
 - live_grep
 - sf = search files
+- sr = search ripgrep
 - <space><space> = search buffers
-- sr = search recent
 
 ### Treesitter
 
@@ -126,6 +127,17 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 ]d: Move to the next diagnostic. See :help vim.diagnostic.goto_next().
 
 ### Git
+
+#### Merges
+
+- pull the latest / push the latest causing a conflict
+- use enter to open file
+- use = / dd to show diff
+- files should contain merge conflict in diff
+- go to file, delete conflict
+- save and stage and commit
+
+#### Keys
 
 - open file <Enter on file>
 - status <leader>gs
@@ -213,6 +225,15 @@ theprimagen refactoring - but doesn't support rust
 ## Plugins
 
 Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
+
+### Reinstall
+
+- run the install.sh to refresh all plugins and reinstall
+
+### Updates
+
+- :Lazy
+  - Shift+U to update
 
 ## Tricks
 
