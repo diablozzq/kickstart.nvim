@@ -127,6 +127,7 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 
 ### Git
 
+- open file <Enter on file>
 - status <leader>gs
 - help - (in fugitive) g?
 - commit - (in fugitive) cc
