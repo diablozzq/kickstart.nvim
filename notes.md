@@ -244,6 +244,11 @@ M lua/clipboard-image/health.lua
 Refactoring rename variable
 theprimagen refactoring - but doesn't support rust
 
+### Tmux + neovim
+
+* add send to tmux
+* add quick way to open terminal
+
 ## Plugins
 
 Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
