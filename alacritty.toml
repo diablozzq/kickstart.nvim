@@ -1,0 +1,9 @@
+[font]
+size = 16.0
+
+[shell]
+program = "wsl.exe"
+
+[window.dimensions]
+columns = 133
+lines = 40
