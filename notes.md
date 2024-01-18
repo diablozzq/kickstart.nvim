@@ -1,5 +1,28 @@
 # Vim notes
 
+## Why vim
+
+- fast
+  - startup
+  - latency
+  - search
+- customizable 100%
+- useful with i3, tmux, alacritty
+- no tabs - just sf sr etc... fast file changing
+- all keyboard
+- easy install w/ lazy / kickstart self bootstrapping
+- relatively stable now
+
+## Why not vim
+
+- Visual stuff
+  - diagrams
+  - images in markdown
+  - paste image (kinda works...)
+  - special IDEs
+    - Java
+    - Anypoint studio
+
 ## Link to wsl
 
 `ln -s /mnt/c/Users/<username>/Documents/architecture ~/architecture`
@@ -10,9 +33,8 @@
 * ConPTY on Win 10 doesn't support mouse - https://github.com/microsoft/terminal/issues/376
 * How should we paste between system and not?
   * how should we paste into tmux?
-* Git pull
-* Git conflicts
 * clipboard paste image
+  * have semi working
 
 ## Init
 
@@ -341,6 +363,12 @@ Need to map <leader>a to something else? or leave to m
 <<<<<<< HEAD
 
 ## Firenvim
+
+> Ended up being a pain
+
+- small text
+- hyjacks
+- tons of issues
 
 https://github.com/glacambre/firenvim/blob/master/TROUBLESHOOTING.md
 
