@@ -262,6 +262,28 @@ Plugins are stored in `~/.local/share/nvim/lazy/<github name>`
 - :Lazy
   - Shift+U to update
 
+### Alarcitty
+
+Go to alacritty github, download latest release
+
+### Nvim
+
+```bash
+cd ~/Downloads
+wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+tar -xzf nvim-linux64.tar.gz
+rm -rf ~/.nvim
+mv ~/Downloads/nvim-linux64 ~/.nvim
+```
+
+### Kickstart
+
+```bash
+rm -rf ~/.local/share/nvim/lazy
+move ~/.config/nvim to ~/.config/nvim-old
+git clone https://github.com/nvim-lua/kickstart.nvim.git ~/.config/nvim
+```
+
 ## Tricks
 
 * You can change .alacritty.yml and it will update live w/out restart
