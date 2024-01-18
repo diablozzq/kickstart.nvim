@@ -18,10 +18,14 @@
 - Visual stuff
   - diagrams
   - images in markdown
+  - Zotero support =(
+    - Can we use firenvim
   - paste image (kinda works...)
+    - may not need anymore with Zotero
   - special IDEs
     - Java
     - Anypoint studio
+    - Databricks
 
 ## Link to wsl
 
