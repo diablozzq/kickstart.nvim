@@ -32,7 +32,7 @@
 `ln -s /mnt/c/Users/<username>/Documents/architecture ~/architecture`
 `ln -s /mnt/c/Users/<username>/Documents/innovation ~/innovation`
 
-## Issus
+## Issues
 
 * ConPTY on Win 10 doesn't support mouse - https://github.com/microsoft/terminal/issues/376
 * How should we paste between system and not?
@@ -85,6 +85,9 @@ ansible-playbook setup.yml -K
 
 ### Mason
 
+Use Mason to install LSP, linters, formatters, etc...
+:Mason
+
 #### Markdown
 
 - prettier
@@ -97,7 +100,7 @@ ansible-playbook setup.yml -K
 
 - black
 - pyright
-- ruff
+- flake8
 - debugpy
 
 #### Rust
