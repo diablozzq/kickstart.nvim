@@ -1,8 +1,15 @@
 [font]
 size = 16.0
 
-[shell]
-program = "wsl.exe"
+#Uncomment windows
+#[shell]
+#program = "wsl.exe"
+
+# Comment on windows???
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
 
 [window.dimensions]
 columns = 133
