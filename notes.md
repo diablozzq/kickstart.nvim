@@ -141,6 +141,11 @@ harpoon file - <leader>tab
 - <leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 ### LSP
+
+> putting a file in `after\plugins` with the `'lspconfig'.setup() {crap here}`
+> works fine with mason.
+
+
 K: Displays hover information about the symbol under the cursor in a floating window. See :help vim.lsp.buf.hover().
 gd: Jumps to the definition of the symbol under the cursor. See :help vim.lsp.buf.definition().
 gD: Jumps to the declaration of the symbol under the cursor. Some servers don't implement this feature. See :help vim.lsp.buf.declaration().
@@ -293,8 +298,17 @@ move ~/.config/nvim to ~/.config/nvim-old
 git clone https://github.com/nvim-lua/kickstart.nvim.git ~/.config/nvim
 ```
 
+### Spell
+
+- zg - marks the word as a good spelling and saves to
+  `~/.config/nvim/spell/en.utf-8.add`
+- [s and ]s move between misspelled words
+- z= - suggestions for the word
+
 ## Tricks
 
+* You can put files in `~/.config/nvim/ftplugin/` which are auto loaded on file
+  types for filetype specific configs
 * You can change .alacritty.yml and it will update live w/out restart
 * `!` - shows keybinds
 * `!ls -alth` - bang can be used to run commands
