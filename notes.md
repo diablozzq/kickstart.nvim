@@ -157,6 +157,8 @@ gl: Show diagnostics in a floating window. See :help vim.diagnostic.open_float()
 
 ### Git
 
+> Protip: if you used HTTPS, it will prompt for username / password. to fix, use `git remote set-url origin git@github.com:diablozzq/kickstart.nvim.git`
+
 #### Merges
 
 - pull the latest / push the latest causing a conflict
