@@ -1,0 +1,36 @@
+---
+- name: Installs the latest neovim
+  connection: local
+  vars:
+    neovim_vers: "v0.9.5"
+  hosts: localhost
+  tasks:
+  - name: Create downloads directory
+    ansible.builtin.file:
+      path: ~/Downloads
+      state: directory
+      mode: '0755'
+  - name: Download neovim
+    ansible.builtin.get_url:
+      url: "https://github.com/neovim/neovim/releases/download/{{neovim_vers}}/nvim-linux64.tar.gz"
+      dest: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
+  - name: Remove old neovim directory
+    file:
+      path: ~/Downloads/nvim-linux64
+      state: absent
+  - name: Unarchive nvim
+    ansible.builtin.unarchive:
+      src: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
+      dest: ~/Downloads/
+  - name: Remove old .nvim directory
+    file:
+      path: ~/.nvim
+      state: absent
+  # Reset nvim config
+  #rm -rf ~/.local/share/nvim
+  #rm -rf ~/.local/state/nvim
+  #rm -rf ~/.cache/nvim
+  - name: Copy nvim folder to right path
+    ansible.builtin.command: mv ~/Downloads/nvim-linux64 ~/.nvim
+    args:
+      creates: ~/.nvim/bin

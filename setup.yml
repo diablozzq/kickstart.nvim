@@ -8,6 +8,8 @@
   connection: local
   vars:
     git_pass: "pass"
+    neovim_vers: "v0.9.5"
+    alacritty_vers: ""
   hosts: localhost
   tasks:
     # Need to do SSH key in ansible vault
@@ -27,8 +29,12 @@
       mode: '0755'
   - name: Download neovim
     ansible.builtin.get_url:
-      url: https://github.com/neovim/neovim/releases/download/v0.9.0/nvim-linux64.tar.gz
-      dest: ~/Downloads/nvim-linux64.tar.gz
+      url: "https://github.com/neovim/neovim/releases/download/{{neovim_vers}}/nvim-linux64.tar.gz"
+      dest: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
+  - name: Remove old .nvim directory
+    file:
+      path: ~/.nvim
+      state: absent
   - name: Create .nvim directory
     ansible.builtin.file:
       path: ~/.nvim
@@ -40,7 +46,7 @@
   #rm -rf ~/.cache/nvim
   - name: Install nvim
     ansible.builtin.unarchive:
-      src: ~/Downloads/nvim-linux64.tar.gz
+      src: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
       dest: ~/.nvim/
   - name: Install tmux
     ansible.builtin.apt:
@@ -54,6 +60,10 @@
         - python3.10-venv
         - python3-pip
     become: true
+  - name: Check if we are on Windows
+    stat:
+      path: /mnt/c
+    register: is_windows
   - name: Change user shell to zsh
     become: yes
     user:
@@ -64,10 +74,12 @@
       path: /mnt/c/Users/morla/AppData/Roaming/alacritty
       state: directory
       mode: '0755'
+    when: is_windows.exists
   - name: Download alacritty
     ansible.builtin.get_url:
       url: https://github.com/alacritty/alacritty/releases/download/v0.12.0/Alacritty-v0.12.0-portable.exe
       dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.exe"
+    when: is_windows.exists
   - include: config.yml
 #git config --global user.name "Kasey Morland"
 #git config --global user.email "morlandkc@gmail.com"
