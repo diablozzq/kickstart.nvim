@@ -22,14 +22,26 @@
     ansible.builtin.unarchive:
       src: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
       dest: ~/Downloads/
+  - name: Remove lazy lock nvim
+    file:
+      path: ~/.config/nvim/lazy-lock.json
+      state: absent
   - name: Remove old .nvim directory
     file:
       path: ~/.nvim
       state: absent
-  # Reset nvim config
-  #rm -rf ~/.local/share/nvim
-  #rm -rf ~/.local/state/nvim
-  #rm -rf ~/.cache/nvim
+  - name: Remove local share nvim
+    file:
+      path: ~/.local/share/nvim
+      state: absent
+  - name: Remove local state nvim
+    file:
+      path: ~/.local/state/nvim
+      state: absent
+  - name: Remove nvim cache
+    file:
+      path: ~/.cache/nvim
+      state: absent
   - name: Copy nvim folder to right path
     ansible.builtin.command: mv ~/Downloads/nvim-linux64 ~/.nvim
     args:

@@ -1,0 +1,16 @@
+[font]
+size = 16.0
+
+#Uncomment windows
+[shell]
+program = "wsl.exe"
+
+# Comment on windows???
+#[[keyboard.bindings]]
+#action = "Paste"
+#key = "V"
+#mods = "Control"
+
+[window.dimensions]
+columns = 133
+lines = 40

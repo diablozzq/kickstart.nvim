@@ -1,11 +1,6 @@
 [font]
 size = 16.0
 
-#Uncomment windows
-#[shell]
-#program = "wsl.exe"
-
-# Comment on windows???
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"

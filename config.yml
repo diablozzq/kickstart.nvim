@@ -25,6 +25,6 @@
       state: link
   - name: Copy Windows alacritty config
     ansible.builtin.copy:
-      src: ~/.config/nvim/alacritty-windows.yml
-      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
+      src: ~/.config/nvim/alacritty-windows.toml
+      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.toml"
     when: register_name.stat.exists

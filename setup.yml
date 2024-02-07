@@ -1,15 +1,12 @@
 # ansible-playbook setup.yml
 # mac
 # Install homebrew
-# Install alacritty
 # brew install ansible
 ---
 - name: Setup dev environment
   connection: local
   vars:
     git_pass: "pass"
-    neovim_vers: "v0.9.5"
-    alacritty_vers: ""
   hosts: localhost
   tasks:
     # Need to do SSH key in ansible vault
@@ -22,32 +19,31 @@
     #  ansible.builtin.git:
     #    repo: git@github.com:diablozzq/kickstart.nvim.git
     #    dest: ~/.config/nvim
+  - name: Configure git user name
+    git_config:
+      name: user.name
+      value: "Kasey Morland"
+      scope: global
+  - name: Configure git email
+    git_config:
+      name: user.email
+      value: "morlandkc@gmail.com"
+      scope: global
+  - name: Configure git pull rebase
+    git_config:
+      name: pull.rebase
+      value: "false"
+      scope: global
+  - name: Configure git editor
+    git_config:
+      name: core.editor
+      value: "nvim"
+      scope: global
   - name: Create downloads directory
     ansible.builtin.file:
       path: ~/Downloads
       state: directory
       mode: '0755'
-  - name: Download neovim
-    ansible.builtin.get_url:
-      url: "https://github.com/neovim/neovim/releases/download/{{neovim_vers}}/nvim-linux64.tar.gz"
-      dest: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
-  - name: Remove old .nvim directory
-    file:
-      path: ~/.nvim
-      state: absent
-  - name: Create .nvim directory
-    ansible.builtin.file:
-      path: ~/.nvim
-      state: directory
-      mode: '0755'
-  # Reset nvim config
-  #rm -rf ~/.local/share/nvim
-  #rm -rf ~/.local/state/nvim
-  #rm -rf ~/.cache/nvim
-  - name: Install nvim
-    ansible.builtin.unarchive:
-      src: "~/Downloads/nvim-linux64-{{neovim_vers}}.tar.gz"
-      dest: ~/.nvim/
   - name: Install tmux
     ansible.builtin.apt:
       pkg:
@@ -60,27 +56,11 @@
         - python3.10-venv
         - python3-pip
     become: true
-  - name: Check if we are on Windows
-    stat:
-      path: /mnt/c
-    register: is_windows
   - name: Change user shell to zsh
     become: yes
     user:
       name: "{{ ansible_env.USER }}"
       shell: /bin/zsh
-  - name: Create alacritty directory
-    ansible.builtin.file:
-      path: /mnt/c/Users/morla/AppData/Roaming/alacritty
-      state: directory
-      mode: '0755'
-    when: is_windows.exists
-  - name: Download alacritty
-    ansible.builtin.get_url:
-      url: https://github.com/alacritty/alacritty/releases/download/v0.12.0/Alacritty-v0.12.0-portable.exe
-      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.exe"
-    when: is_windows.exists
+  - include: install_neovim.yml
+  - include: install_alacritty.yml
   - include: config.yml
-#git config --global user.name "Kasey Morland"
-#git config --global user.email "morlandkc@gmail.com"
-#git config --global pull.rebase false
