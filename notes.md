@@ -145,6 +145,8 @@ harpoon file - <leader>tab
 > putting a file in `after\plugins` with the `'lspconfig'.setup() {crap here}`
 > works fine with mason.
 
+> Use :LspInfo to check if your LSP is running
+> Use :Mason to install the LSP
 
 K: Displays hover information about the symbol under the cursor in a floating window. See :help vim.lsp.buf.hover().
 gd: Jumps to the definition of the symbol under the cursor. See :help vim.lsp.buf.definition().

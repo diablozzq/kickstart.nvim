@@ -39,5 +39,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias vim=nvim
 export PATH=~/.nvim/bin:$PATH
 
+export DENO_INSTALL="/home/kasey/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 cd ~/
 ~/.config/nvim/tmux.sh
