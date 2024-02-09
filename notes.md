@@ -1,5 +1,43 @@
 # Vim notes
 
+## Why not Neovim
+
+as of 2024 - not going to continue down neovim any longer.
+
+* Still too many LSPs that don't just work
+  * i.e. tailwindcss
+* too much time customizing
+* no good remote solution
+* too many bugs
+* inadequate debugger
+* vscode is still really really fast
+* vscode has sooooo many plugins like draw.io
+* vscode jupyter notebooks actually work
+* pasting images, image support, file support, all in one editor, etc...
+
+### The good of neovim
+
+* it's **almost** ready
+  * once everything matures (5 years?) and just works
+  * most things auto install
+  * kickstart was a great boostrapper
+* telescope
+  * fuzzy finding things was awesome
+  * this was arguably the most beneficial part of the whole thing
+  * double space to quickly jump / fuzzy find files was amazing
+    * also - with preview
+  * could just reimplement this in VSCode ....
+* learned vim shortcuts
+* extremely efficient / fast
+* pure vim shortcuts
+* git with pure keyboard shortcuts
+* can make literally anything work
+  * but VSCode could too - with a bit of work
+
+### Learnings
+
+* Take best parts of neovim and move to vscode
+
 ## Why vim
 
 - fast
