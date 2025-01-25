@@ -1,0 +1,30 @@
+# ansible-playbook config.yml
+---
+- name: Refresh config files
+  connection: local
+  hosts: localhost
+  tasks:
+  - name: Check windows path
+    stat:
+      path: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.yml"
+    register: register_name
+  - name: Link tmux config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.tmux.conf
+      dest: ~/.tmux.conf
+      state: link
+  - name: Link zsh config
+    ansible.builtin.file:
+      src: ~/.config/nvim/.zshrc
+      dest: ~/.zshrc
+      state: link
+  - name: Link alacritty config
+    ansible.builtin.file:
+      src: ~/.config/nvim/alacritty.toml
+      dest: ~/.alacritty.toml
+      state: link
+  - name: Copy Windows alacritty config
+    ansible.builtin.copy:
+      src: ~/.config/nvim/alacritty-windows.toml
+      dest: "/mnt/c/Users/{{ ansible_user_id }}/AppData/Roaming/alacritty/alacritty.toml"
+    when: register_name.stat.exists

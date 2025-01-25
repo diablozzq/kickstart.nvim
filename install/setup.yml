@@ -1,0 +1,66 @@
+# ansible-playbook setup.yml
+# mac
+# Install homebrew
+# brew install ansible
+---
+- name: Setup dev environment
+  connection: local
+  vars:
+    git_pass: "pass"
+  hosts: localhost
+  tasks:
+    # Need to do SSH key in ansible vault
+    #- name: Create config directory
+    #  ansible.builtin.file:
+    #    path: ~/.config
+    #    state: directory
+    #    mode: '0755'
+    #- name: Read-write git checkout from github
+    #  ansible.builtin.git:
+    #    repo: git@github.com:diablozzq/kickstart.nvim.git
+    #    dest: ~/.config/nvim
+  - name: Configure git user name
+    git_config:
+      name: user.name
+      value: "Kasey Morland"
+      scope: global
+  - name: Configure git email
+    git_config:
+      name: user.email
+      value: "morlandkc@gmail.com"
+      scope: global
+  - name: Configure git pull rebase
+    git_config:
+      name: pull.rebase
+      value: "false"
+      scope: global
+  - name: Configure git editor
+    git_config:
+      name: core.editor
+      value: "nvim"
+      scope: global
+  - name: Create downloads directory
+    ansible.builtin.file:
+      path: ~/Downloads
+      state: directory
+      mode: '0755'
+  - name: Install tmux
+    ansible.builtin.apt:
+      pkg:
+        - tmux
+        - make
+        - gcc
+        - ripgrep
+        - zsh
+        - npm
+        - python3.10-venv
+        - python3-pip
+    become: true
+  - name: Change user shell to zsh
+    become: yes
+    user:
+      name: "{{ ansible_env.USER }}"
+      shell: /bin/zsh
+  - include: install_neovim.yml
+  - include: install_alacritty.yml
+  - include: config.yml

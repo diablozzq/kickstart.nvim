@@ -1,0 +1,22 @@
+[font]
+size = 16.0
+# Download from https://www.nerdfonts.com/font-downloads
+# Extract and install the fonts for all users.  If you have issues, maybe service restart fonts
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular"}
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold"}
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic"}
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+
+#Uncomment windows
+[shell]
+program = "wsl.exe"
+
+# Comment on windows???
+#[[keyboard.bindings]]
+#action = "Paste"
+#key = "V"
+#mods = "Control"
+
+[window.dimensions]
+columns = 133
+lines = 40
